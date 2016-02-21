@@ -213,12 +213,12 @@ public class Legend extends ApplicationAdapter {
 					manager.load("data/lvl/"+level, TiledMap.class);
 					Preferences prefs = Gdx.app.getPreferences("Save State");
 					prefs.clear();
-					menuscreen.remove();
+					/*menuscreen.remove();
 					menuscreen = null;
 					menuscreen = new Image(new TextureRegion(new Texture(Gdx.files.internal("data/img/menu/"+level.replace(".tmx", ".png")))));
 			    	stage.addActor(menuscreen);
 			    	menuscreen.setX(0);
-			    	menuscreen.setY(0);
+			    	menuscreen.setY(0);*/
 				}
 				else if (keycode == Keys.ESCAPE) {
 					Preferences prefs = Gdx.app.getPreferences("Save State");
@@ -235,10 +235,10 @@ public class Legend extends ApplicationAdapter {
 			}
 		};
 		hud.addListener(start);
-		menuscreen = new Image(new TextureRegion(new Texture(Gdx.files.internal("data/img/menu/"+level.replace(".tmx", ".png")))));
+		/*menuscreen = new Image(new TextureRegion(new Texture(Gdx.files.internal("data/img/menu/"+level.replace(".tmx", ".png")))));
     	stage.addActor(menuscreen);
     	menuscreen.setX(0);
-    	menuscreen.setY(0);
+    	menuscreen.setY(0);*/
 		
 	}
 	public void fromPause() {
@@ -247,7 +247,7 @@ public class Legend extends ApplicationAdapter {
 		
 	}
 	public void fromMenu() {
-		menuscreen.remove();
+		//menuscreen.remove();
 		hud.removeListener(start);
 	}
 	public void toLoading() {
@@ -304,10 +304,6 @@ public class Legend extends ApplicationAdapter {
 		else if (type.equals("card")) {
 			CardObject j = new CardObject(x, y, img, player, (String) tile.getProperties().get("card"));
 			bg.addActor(j);
-		}
-		else if (type.equals("radio")) {
-			AliceRadio r = new AliceRadio(x, y, img, player);
-			bg.addActor(r);
 		}
 		else if (type.equals("terrain") && tile.getProperties().get("data").equals("special")) {
 			Wall g = new Wall(x, y, true, img, 50, 2);

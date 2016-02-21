@@ -1,4 +1,4 @@
-package com.sunlight4.legend;
+package src.com.sunlight4.legend;
 
 import android.os.Bundle;
 

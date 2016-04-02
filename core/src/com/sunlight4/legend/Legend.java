@@ -227,7 +227,7 @@ public class Legend extends ApplicationAdapter {
 					for (Card c : savedcards) {
 						names.add(c.name);
 					}
-					prefs.putString("cards", String.join(":", names));
+					prefs.putString("cards", ":"+ names);
 					prefs.flush();
 					Gdx.app.exit();
 				}
